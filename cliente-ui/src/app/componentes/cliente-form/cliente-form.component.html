@@ -1,0 +1,22 @@
+<h2>Adcionar Cliente</h2>
+<div class="card card-body mb-3">
+  <form>
+    <div class="form-group">
+      <label>Nome</label>
+      <input [(ngModel)]="currentCliente.nome" class="form-control" type="text" name="nome" #nome>
+    </div>
+    <div class="form-group">
+      <label>Limite de Crédito</label>
+      <input [(ngModel)]="currentCliente.limCredito" class="form-control money" type="text" name="limCredito" #limCredito>
+    </div>
+    <div class="form-group">
+      <select [(ngModel)]="currentCliente.risco" class="form-control form-control-sm" #risco name="risco" >
+        <option *ngFor="let r of riscos" [ngValue]="r.tipo">{{r.tipo}}</option>
+      </select>
+    </div>
+    <input type="hidden" name="id">
+    <button *ngIf="!isEdit" (click)="addCliente(currentCliente)" class="btn btn-dark btn-block">Adiciona
+      Cliente</button>
+    <button *ngIf="isEdit" (click)="updateCliente()" class="btn btn-warning btn-block">Atualizar Cliente</button>
+  </form>
+</div>
