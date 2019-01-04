@@ -1,0 +1,34 @@
+<app-cliente-form [currentCliente]="currentCliente" [isEdit]="isEdit" (newCliente)="onNewCliente($event)"
+  (updatedCliente)="onUpdatedCliente($event)"></app-cliente-form>
+<h2>Clientes</h2>
+<div class="card mb-3" *ngFor="let cliente of clientes">
+  <div class="card-body">
+    <div class="row">
+      <div class="col-sm-8">
+        <h3>
+          {{cliente.nome}}
+        </h3>
+      </div>
+      <div class="col-sm-4">
+        <button (click)="removeCliente(cliente)" class="btn btn-danger btn-sm"><i class="fa fa-remove"></i></button>
+        <button (click)="editCliente(cliente)" class="btn btn-light btn-sm"><i class="fa fa-pencil"></i></button>
+      </div>
+    </div>
+
+    <ul class="list-group">
+      <li class="list-group-item">Lim. Crédito: R$
+        <span class="money">
+          {{cliente.limCredito}}
+        </span>
+      </li>
+      <li class="list-group-item">Risco:
+        {{cliente.risco}}
+      </li>
+      <li class="list-group-item">Taxa:
+        {{cliente.taxaRisco * 100}}%</li>
+    </ul>
+  </div>
+</div>
+<div *ngIf="!clientes" class="card mb-3">
+  <p>Nenhum Cliente encontrado!</p>
+</div>
