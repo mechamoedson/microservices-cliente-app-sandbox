@@ -21,8 +21,8 @@ import org.springframework.web.client.RestTemplate;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 
+import br.com.edson.cloud.dto.ClienteDTO;
 import br.com.edson.microservices.util.CustomErrorType;
-import br.com.mechamoedson.cloud.dto.ClienteDTO;
 
 @RestController
 @RequestMapping("/cliente")

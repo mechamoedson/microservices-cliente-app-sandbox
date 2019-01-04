@@ -16,9 +16,9 @@
     </div>
 
     <ul class="list-group">
-      <li class="list-group-item">Lim. Crédito: R$
-        <span class="money">
-          {{cliente.limCredito}}
+      <li class="list-group-item">Lim. Crédito:
+        <span>
+          {{cliente.limCredito | currency:'BRL':'symbol':'4.2-2':'pt-BR'}}
         </span>
       </li>
       <li class="list-group-item">Risco:

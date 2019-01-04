@@ -1,8 +1,8 @@
-package br.com.mechamoedson.cloud.dto;
+package br.com.edson.cloud.dto;
 
 import java.math.BigDecimal;
 
-import br.com.mechamoedson.cloud.enums.Risco;
+import br.com.edson.cloud.enums.Risco;
 
 public class ClienteDTO {
 

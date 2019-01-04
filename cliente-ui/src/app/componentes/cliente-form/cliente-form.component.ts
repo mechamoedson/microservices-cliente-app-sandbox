@@ -28,7 +28,8 @@ export class ClienteFormComponent implements OnInit {
       alert('dados invalidos!');
     } else {
 
-      this.formatarLimCredito();
+      // this.formatarLimCredito();
+      console.log(this.currentCliente.limCredito)
       this._clienteService.saveCliente(this.currentCliente).subscribe(
         cliente => {
           this.newCliente.emit(cliente);
@@ -49,6 +50,7 @@ export class ClienteFormComponent implements OnInit {
     let result = limiteCredito.replace(".", "");
     result = result.replace(",", ".");
     this.currentCliente.limCredito = Number(result);
+    console.log('formatado valor: ',result)
   }
 
 }

@@ -11,7 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import br.com.mechamoedson.cloud.enums.Risco;
+import br.com.edson.cloud.enums.Risco;
 
 @Entity(name = "cliente")
 @Table(name = "cliente_tbl", catalog = "cliente_microservice")

@@ -17,11 +17,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.edson.cloud.dto.ClienteDTO;
+import br.com.edson.cloud.enums.Risco;
 import br.com.edson.microservices.cloud.entity.ClienteEntity;
 import br.com.edson.microservices.cloud.repository.ClientesRepository;
 import br.com.edson.microservices.util.CustomErrorType;
-import br.com.mechamoedson.cloud.dto.ClienteDTO;
-import br.com.mechamoedson.cloud.enums.Risco;
 
 @RestController
 @RequestMapping("/cliente")

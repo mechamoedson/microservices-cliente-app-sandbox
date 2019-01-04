@@ -7,8 +7,21 @@ import { ClienteFormComponent } from './componentes/cliente-form/cliente-form.co
 import { ClientesComponent } from './componentes/clientes/clientes.component';
 import { registerLocaleData } from '@angular/common';
 import { NavBarComponent } from './componentes/nav-bar/nav-bar.component';
+import { CurrencyMaskModule } from "ng2-currency-mask";
+import { CurrencyMaskConfig, CURRENCY_MASK_CONFIG } from "ng2-currency-mask/src/currency-mask.config";
 import ptBr from '@angular/common/locales/pt';
+
 registerLocaleData(ptBr)
+
+export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
+  align: "right",
+  allowNegative: false,
+  decimal: ",",
+  precision: 2,
+  prefix: "R$ ",
+  suffix: "",
+  thousands: "."
+};
 
 @NgModule({
   declarations: [
@@ -21,8 +34,11 @@ registerLocaleData(ptBr)
     BrowserModule,
     HttpClientModule,
     FormsModule,
+    CurrencyMaskModule
   ],
-  providers: [],
+  providers: [
+    { provide: CURRENCY_MASK_CONFIG, useValue: CustomCurrencyMaskConfig }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
