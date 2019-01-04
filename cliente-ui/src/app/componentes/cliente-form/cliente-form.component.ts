@@ -28,7 +28,6 @@ export class ClienteFormComponent implements OnInit {
       alert('dados invalidos!');
     } else {
 
-      // this.formatarLimCredito();
       console.log(this.currentCliente.limCredito)
       this._clienteService.saveCliente(this.currentCliente).subscribe(
         cliente => {
@@ -38,19 +37,11 @@ export class ClienteFormComponent implements OnInit {
   }
 
   updateCliente() {
-    this.formatarLimCredito();
+    console.log('formatado original: ',this.currentCliente.limCredito)
     this._clienteService.updateCliente(this.currentCliente).subscribe(cliente => {
       this.isEdit = false;
       this.updatedCliente.emit();
     });
-  }
-
-  private formatarLimCredito() {
-    let limiteCredito = new String(this.currentCliente.limCredito);
-    let result = limiteCredito.replace(".", "");
-    result = result.replace(",", ".");
-    this.currentCliente.limCredito = Number(result);
-    console.log('formatado valor: ',result)
   }
 
 }
